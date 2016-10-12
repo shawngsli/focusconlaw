@@ -1,0 +1,20 @@
+# Keep these files out of the repo
+/wp-content/themes/twenty*
+/wp-content/themes/__MACOSX
+/wp-content/themes/*.zip
+/wp-content/themes/*_bk
+/wp-content/themes/subway
+/wp-content/themes/*.tar.gz
+/wp-content/upgrade
+/wp-content/uploads
+/sitemal.*
+/wp-config.php
+*.sql
+/lawstool
+
+#Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*
+*!imageoptim*
+.htaccess
