@@ -58,7 +58,7 @@
                 
                                                 <div class="logo">
                 
-                                                        <a href="<?php echo home_url(); ?>/"><img src="wp-content/uploads/2015/10/focusconlaw_logo.png" alt="<?php bloginfo('name'); ?>" class="logo_standard" /></a>
+							<a href="<?php echo home_url(); ?>/"><img src="<?php echo home_url(); ?>/wp-content/uploads/2015/10/focusconlaw_logo.png" alt="<?php bloginfo('name'); ?>" class="logo_standard" /></a>
                                                                 <?php if($data['media_logo_retina'] != '') { ?><a href="<?php echo home_url(); ?>/"><img src="<?php echo $data['media_logo_retina'] ?>" width="<?php echo $data['logo_width']; ?>" height="<?php echo $data['logo_height']; ?>" alt="<?php bloginfo('name'); ?>" class="logo_retina" /></a><?php } ?>
                                                 </div>
                                         </div>
