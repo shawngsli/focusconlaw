@@ -18,9 +18,9 @@
 
 <!-- Mobile Specific Metas & Favicons
 ========================================================= -->
-<?php if($data['check_mobilezoom'] == 0) { ?><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><?php } ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-<?php if($data['media_favicon'] != "") { ?><link rel="shortcut icon" href="<?php echo $data['media_favicon']; ?>"><?php } ?>
+<link rel="shortcut icon" href="wp-content/uploads/2015/10/focusconlaw_favicon.gif">
 
 <?php if($data['media_favicon_iphone'] != "") { ?><link rel="apple-touch-icon" href="<?php echo $data['media_favicon_iphone']; ?>"><?php } ?>
 
@@ -44,9 +44,7 @@
 
         <?php include_once('analyticstracking.php') ?>
 
-	<?php if($data['select_layoutstyle'] == 'Boxed Layout' || $data['select_layoutstyle'] == 'Boxed Layout with margin' ) { ?>	
 	<div id="boxed-layout">
-	<?php } ?>
 
 	<div class="wrapall">
 	
@@ -143,35 +141,5 @@
 	<?php } ?>
 
 	<?php
-	
-	if($data['header_layout']) {
-		if(is_page('header-2')) {
-			include_once('framework/inc/headers/header-v2.php');
-		} elseif(is_page('header-3')) {
-			include_once('framework/inc/headers/header-v3.php');
-		} elseif(is_page('header-4')) {
-			include_once('framework/inc/headers/header-v4.php');
-		} elseif(is_page('header-5')) {
-			include_once('framework/inc/headers/header-v5.php');
-		} elseif(is_page('header-6')) {
-			include_once('framework/inc/headers/header-v6.php');
-		} else {
-			include_once('framework/inc/headers/header-'.$data['header_layout'].'.php');
-		}
-	} else {
-		if(is_page('header-2')) {
-			include_once('framework/inc/headers/header-v2.php');
-		} elseif(is_page('header-3')) {
-			include_once('framework/inc/headers/header-v3.php');
-		} elseif(is_page('header-4')) {
-			include_once('framework/inc/headers/header-v4.php');
-		} elseif(is_page('header-5')) {
-			include_once('framework/inc/headers/header-v5.php');
-		} elseif(is_page('header-6')) {
-			include_once('framework/inc/headers/header-v6.php');
-		} else {
-			include_once('framework/inc/headers/header-v1.php');
-		}
-	}
-	
+            include_once('framework/inc/headers/header-v2.php');
 	?>		

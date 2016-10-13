@@ -1,6 +1,6 @@
-<header id="header-v2" class="header clearfix">
+<header id="header" class="header clearfix">
 		
-		<div class="container header-v2-container">
+		<div class="container header-container">
 			
 			<div class="sixteen columns clearfix">
 			

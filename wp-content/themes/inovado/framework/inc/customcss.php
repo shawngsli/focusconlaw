@@ -214,15 +214,6 @@ function my_styles_method() {
 
 		// ----------- STYLES -----------
         $custom_css = "
-        	
-/*        	body{ font-family: {$font_body_face}, Arial, Helvetica, sans-serif; font-size: {$font_body_size}; font-weight: {$font_body_style}; color: {$font_body_color}; }
-
-			h1{ font-family: {$font_h1_face}, Arial, Helvetica, sans-serif; font-size: {$font_h1_size}; font-weight: {$font_h1_style}; color: {$font_h1_color}; }
-			h2{ font-family: {$font_h2_face}, Arial, Helvetica, sans-serif; font-size: {$font_h2_size}; font-weight: {$font_h2_style}; color: {$font_h2_color}; }
-			h3{ font-family: {$font_h3_face}, Arial, Helvetica, sans-serif; font-size: {$font_h3_size}; font-weight: {$font_h3_style}; color: {$font_h3_color}; }
-			h4{ font-family: {$font_h4_face}, Arial, Helvetica, sans-serif; font-size: {$font_h4_size}; font-weight: {$font_h4_style}; color: {$font_h4_color}; }
-			h5{ font-family: {$font_h5_face}, Arial, Helvetica, sans-serif; font-size: {$font_h5_size}; font-weight: {$font_h5_style}; color: {$font_h5_color}; }
-			h6{ font-family: {$font_h6_face}, Arial, Helvetica, sans-serif; font-size: {$font_h6_size}; font-weight: {$font_h6_style}; color: {$font_h6_color}; }*/
 
 			h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited  { font-weight: inherit; color: inherit; }
 
@@ -242,19 +233,17 @@ function my_styles_method() {
 			.header{ background: {$color_headerbg}; }
 			.header .slogan{ font-family: {$font_slogan_face}, Arial, Helvetica, sans-serif; font-size: {$font_slogan_size}; font-weight: {$font_slogan_style}; color: {$font_slogan_color}; }
 
-			/* Header V1 ------------------------------------------------------------------------ */  
+			/* Header ------------------------------------------------------------------------ */  
 
-			#header { height: {$style_headerheight}px; }
-			#header .logo{ margin-top: {$style_logotopmargin}; }
-			#header .select-menu{ background: {$color_headerbg} }
-
-			#header #navigation ul#nav > li { height: {$style_headerheight}px; }
-			#header #navigation ul#nav > li > a { height: {$style_headerheight_minus}px; line-height: {$style_headerheight_minus}px; }
-			#header #navigation ul#nav li .sub-menu{ top: {$style_headerheight_minus}px; }
-			#header #header-searchform{ margin-top: {$style_searchformtopmargin}; }
-			#header #header-cart{ margin-top: {$style_searchformtopmargin}; }
-
+			#header .header-container{ height: {$style_hv2height}; }
+			#header .logo{ margin-top: {$style_hv2logotopmargin}; }
+			#header #header-searchform{ margin-top: {$style_hv2searchformtopmargin}; }
+			#header #header-cart{ margin-top: {$style_hv2searchformtopmargin}; }
+			#header .slogan{ margin-top: {$style_hv2slogantopmargin}; }
+			#header #navigation .sub-menu{ top: {$style_hv2submenumargin}; }
+/*
 			#header #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }
+*/
 			#header #navigation ul#nav > li > a:hover { color: {$color_navlinkhover}; border-color: {$color_navlinkhover}; }
 			#header #navigation ul#nav > li.current-menu-item > a,
 			#header #navigation ul#nav > li.current-menu-item > a:hover,
@@ -267,138 +256,13 @@ function my_styles_method() {
 			#header #navigation ul#nav > li.current_page_ancestor > a,
 			#header #navigation ul#nav > li.current_page_ancestor > a:hover { color: {$color_navlinkactive}; border-color: {$color_navlinkactive}; }
 
-			/* Header V2 ------------------------------------------------------------------------ */  
-
-			#header-v2 .header-v2-container{ height: {$style_hv2height}; }
-			#header-v2 .logo{ margin-top: {$style_hv2logotopmargin}; }
-			#header-v2 #header-searchform{ margin-top: {$style_hv2searchformtopmargin}; }
-			#header-v2 #header-cart{ margin-top: {$style_hv2searchformtopmargin}; }
-			#header-v2 .slogan{ margin-top: {$style_hv2slogantopmargin}; }
-			#header-v2 #navigation .sub-menu{ top: {$style_hv2submenumargin}; }
-/*
-			#header-v2 #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }
-*/
-			#header-v2 #navigation ul#nav > li > a:hover { color: {$color_navlinkhover}; border-color: {$color_navlinkhover}; }
-			#header-v2 #navigation ul#nav > li.current-menu-item > a,
-			#header-v2 #navigation ul#nav > li.current-menu-item > a:hover,
-			#header-v2 #navigation ul#nav > li.current-page-ancestor > a,
-			#header-v2 #navigation ul#nav > li.current-page-ancestor > a:hover,
-			#header-v2 #navigation ul#nav > li.current-menu-ancestor > a,
-			#header-v2 #navigation ul#nav > li.current-menu-ancestor > a:hover,
-			#header-v2 #navigation ul#nav > li.current-menu-parent > a,
-			#header-v2 #navigation ul#nav > li.current-menu-parent > a:hover,
-			#header-v2 #navigation ul#nav > li.current_page_ancestor > a,
-			#header-v2 #navigation ul#nav > li.current_page_ancestor > a:hover { color: {$color_navlinkactive}; border-color: {$color_navlinkactive}; }
-
-			#header-v2 #navigation ul#nav > li.current-menu-item > a:after,
-			#header-v2 #navigation ul#nav > li.current-page-ancestor > a:after,
-			#header-v2 #navigation ul#nav > li.current-menu-ancestor > a:after,
-			#header-v2 #navigation ul#nav > li.current-menu-parent > a:after,
-			#header-v2 #navigation ul#nav > li.current_page_ancestor > a:after{
+			#header #navigation ul#nav > li.current-menu-item > a:after,
+			#header #navigation ul#nav > li.current-page-ancestor > a:after,
+			#header #navigation ul#nav > li.current-menu-ancestor > a:after,
+			#header #navigation ul#nav > li.current-menu-parent > a:after,
+			#header #navigation ul#nav > li.current_page_ancestor > a:after{
 				border-color: {$color_navlinkactive} transparent transparent transparent;
 			}
-
-			/* Header V3 ------------------------------------------------------------------------ */  
-
-			#header-v3 { height: {$style_hv3height}; }
-			#header-v3 .logo{ margin-top: {$style_hv3logotopmargin}; }
-			#header-v3 #navigation ul{ margin-top: {$style_hv3navigationtopmargin}; }
-			#header-v3 #header-searchform{ margin-top: {$style_hv3searchformtopmargin}; }
-			#header-v3 #header-cart{ margin-top: {$style_hv3searchformtopmargin}; }
-			#header-v3 #navigation .sub-menu{ top: {$style_hv3submenumargin}; }
-
-			#header-v3 #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; background: {$color_headerbg}; }
-
-			#header-v3 #navigation ul#nav > li > a:hover, 
-			#header-v3 #navigation ul#nav > li.sfHover > a  { background: {$color_navlinkhover}; }
-
-			#header-v3 #navigation ul#nav > li.current-menu-item > a,
-			#header-v3 #navigation ul#nav > li.current-menu-item > a:hover,
-			#header-v3 #navigation ul#nav > li.current-page-ancestor > a,
-			#header-v3 #navigation ul#nav > li.current-page-ancestor > a:hover,
-			#header-v3 #navigation ul#nav > li.current-menu-ancestor > a,
-			#header-v3 #navigation ul#nav > li.current-menu-ancestor > a:hover,
-			#header-v3 #navigation ul#nav > li.current-menu-parent > a,
-			#header-v3 #navigation ul#nav > li.current-menu-parent > a:hover,
-			#header-v3 #navigation ul#nav > li.current_page_ancestor > a,
-			#header-v3 #navigation ul#nav > li.current_page_ancestor > a:hover { background: {$color_navlinkactive}; }
-
-			/* Header V4 ------------------------------------------------------------------------ */  
-
-			#header-v4 .header-v4-container{ height: {$style_hv4height}; }
-			#header-v4 .logo{ margin-top: {$style_hv4logotopmargin}; }
-			#header-v4 #header-searchform{ margin-top: {$style_hv4searchformtopmargin}; }
-			#header-v4 #header-cart{ margin-top: {$style_hv4searchformtopmargin}; }
-			#header-v4 .slogan{ margin-top: {$style_hv4slogantopmargin}; }
-			#header-v4 #navigation .sub-menu{ top: {$style_hv4submenumargin}; }
-
-			#header-v4 #navigation{ background: {$color_hv4bgcolor}; }
-			#header-v4 #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }
-
-			#header-v4 #navigation ul#nav > li > a:hover, 
-			#header-v4 #navigation ul#nav > li.sfHover > a { background: {$color_navlinkhover}; }
-
-			#header-v4 #navigation ul#nav > li.current-menu-item > a,
-			#header-v4 #navigation ul#nav > li.current-menu-item > a:hover,
-			#header-v4 #navigation ul#nav > li.current-page-ancestor > a,
-			#header-v4 #navigation ul#nav > li.current-page-ancestor > a:hover,
-			#header-v4 #navigation ul#nav > li.current-menu-ancestor > a,
-			#header-v4 #navigation ul#nav > li.current-menu-ancestor > a:hover,
-			#header-v4 #navigation ul#nav > li.current-menu-parent > a,
-			#header-v4 #navigation ul#nav > li.current-menu-parent > a:hover,
-			#header-v4 #navigation ul#nav > li.current_page_ancestor > a,
-			#header-v4 #navigation ul#nav > li.current_page_ancestor > a:hover { background: {$color_navlinkactive}; }
-
-			/* Header V5 ------------------------------------------------------------------------ */  
-
-			#header-v5 .header-v5-container{ height: {$style_hv5height}; }
-			#header-v5 .logo{ margin-top: {$style_hv5logotopmargin}; }
-			#header-v5 .slogan{ margin-top: {$style_hv5slogantopmargin}; }
-			#header-v5 #navigation .sub-menu{ top: {$style_hv5submenumargin}; }
-
-			#header-v5 #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }
-
-			#header-v5 #navigation ul#nav > li > a:hover { color: {$color_navlinkhover}; }
-			        
-			#header-v5 #navigation ul#nav > li.current-menu-item > a,
-			#header-v5 #navigation ul#nav > li.current-menu-item > a:hover,
-			#header-v5 #navigation ul#nav > li.current-page-ancestor > a,
-			#header-v5 #navigation ul#nav > li.current-page-ancestor > a:hover,
-			#header-v5 #navigation ul#nav > li.current-menu-ancestor > a,
-			#header-v5 #navigation ul#nav > li.current-menu-ancestor > a:hover,
-			#header-v5 #navigation ul#nav > li.current-menu-parent > a,
-			#header-v5 #navigation ul#nav > li.current-menu-parent > a:hover,
-			#header-v5 #navigation ul#nav > li.current_page_ancestor > a,
-			#header-v5 #navigation ul#nav > li.current_page_ancestor > a:hover { color: {$color_navlinkactive}; border-color:{$color_navlinkactive}; }
-
-			/* Header V6 ------------------------------------------------------------------------ */  
-
-			#header-v6 { height: {$style_headerheight}px; }
-			#header-v6 .logo{ margin-top: {$style_logotopmargin}; }
-			#header-v6 .select-menu{ background: {$color_headerbg} }
-
-			#header-v6 #navigation ul#nav > li { height: {$style_headerheight}px; }
-			#header-v6 #navigation ul#nav > li > a { height: {$style_headerheight_minus}px; line-height: {$style_headerheight_minus}px; }
-			#header-v6 #navigation .sub-menu{ top: {$style_headerheight_minus}px !important; }
-			#header-v6 #header-searchform{ margin-top: {$style_searchformtopmargin}; }
-			#header-v6 #header-cart{ margin-top: {$style_searchformtopmargin}; }
-
-			#header-v6 #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }
-			#header-v6 #navigation ul#nav > li > a:hover { color: {$color_navlinkhover}; border-color: {$color_navlinkhover}; }
-			#header-v6 #navigation ul#nav > li.current-menu-item > a,
-			#header-v6 #navigation ul#nav > li.current-menu-item > a:hover,
-			#header-v6 #navigation ul#nav > li.current-page-ancestor > a,
-			#header-v6 #navigation ul#nav > li.current-page-ancestor > a:hover,
-			#header-v6 #navigation ul#nav > li.current-menu-ancestor > a,
-			#header-v6 #navigation ul#nav > li.current-menu-ancestor > a:hover,
-			#header-v6 #navigation ul#nav > li.current-menu-parent > a,
-			#header-v6 #navigation ul#nav > li.current-menu-parent > a:hover,
-			#header-v6 #navigation ul#nav > li.current_page_ancestor > a,
-			#header-v6 #navigation ul#nav > li.current_page_ancestor > a:hover { color: {$color_navlinkactive}; border-color: {$color_navlinkactive}; }
-
-			#header-v6.header-megamenu #navigation > ul#nav > li.megamenu > ul > li{ border-color: {$color_submenulinkborder} !important; }
-			#header-v6.header-megamenu #navigation .sub-menu ul li a,
-			#header-v6.header-megamenu #navigation .sub-menu li a{ border-color: {$color_submenulinkborder} !important; }
 
 			#navigation ul#nav > li.current-menu-item > a,
 			#navigation ul#nav > li.current-page-ancestor > a,

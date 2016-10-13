@@ -1,51 +1,77 @@
-<?php
-/**
- * The template for displaying archive pages.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package focusconlaw
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<!--
+<div id="title">
+	<div class="container">
+		<div class="ten columns">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+			<?php /* If this is a category archive */ if (is_category()) { ?>
+				<h1><?php _e('Category Archive for', 'minti') ?> &#8216;<?php single_cat_title(); ?>&#8217; </h1>
 
-		<?php
-		if ( have_posts() ) : ?>
+			<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
+				<h1><?php _e('Posts Tagged', 'minti') ?> &#8216;<?php single_tag_title(); ?>&#8217;</h1>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
+				<h1><?php _e('Archive for', 'minti') ?> <?php the_time('F jS, Y'); ?></h1>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
+				<h1><?php _e('Archive for', 'minti') ?> <?php the_time('F, Y'); ?></h1>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+			<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
+				<h1><?php _e('Archive for', 'minti') ?> <?php the_time('Y'); ?></h1>
 
-			endwhile;
+			<?php /* If this is an author archive */ } elseif (is_author()) { ?>
+				<h1><?php _e('Author Archive', 'minti') ?></h1>
 
-			the_posts_navigation();
+			<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+				<h1><?php _e('Blog Archives', 'minti') ?></h1>
+			<?php } ?>
+			
+		</div>
+		<?php if(get_post_meta( get_option('page_for_posts'), 'minti_featuredimage-breadcrumbs', true ) == true) { ?>
+			<div id="breadcrumbs" class="six columns">
+				<?php minti_breadcrumbs(); ?>
+			</div>
+		<?php } ?>
+	</div>
+</div>
+-->
+<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
 
-		else :
+<?php 
+// Get Blog Layout from Theme Options
+if($data['select_bloglayout'] == 'Blog Medium') { 
+	$blogclass = 'blog-medium';
+	$blogtype = 'medium';
+} else {
+	$blogclass = 'blog-large';
+	$blogtype = 'large';
+}
+?>
 
-			get_template_part( 'template-parts/content', 'none' );
+<div id="page-wrap" class="container">
+	
+	<div id="content" class="<?php echo $data['select_blogsidebar']; ?> twelve columns blog <?php echo $blogclass; ?>">
+	
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			
+			<?php get_template_part( 'framework/inc/post-format/content', get_post_format() ); ?>
+	
+		<?php endwhile; ?>
+		
+	
+		<?php get_template_part( 'framework/inc/nav' ); ?>
+	
+		<?php else : ?>
+	
+			<h2><?php _e('Not Found', 'minti') ?></h2>
+	
+		<?php endif; ?>
+	
+	</div>
 
-		endif; ?>
+<?php get_sidebar(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+</div>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

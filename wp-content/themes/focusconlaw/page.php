@@ -1,38 +1,35 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package focusconlaw
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<?php get_template_part( 'framework/inc/titlebar' ); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="page-wrap" class="container">
 
-			<?php
-			while ( have_posts() ) : the_post();
+	<div id="content" class="sidebar-right twelve columns">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+			<div class="entry">
 
-				get_template_part( 'template-parts/content', 'page' );
+				<?php the_content(); ?>
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 
-			endwhile; // End of the loop.
-			?>
+			</div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</article>
+		
+		<?php if(!$data['check_disablecomments']) { ?>
+			<?php comments_template(); ?>
+		<?php } ?>
 
-<?php
-get_sidebar();
-get_footer();
+		<?php endwhile; endif; ?>
+	</div> <!-- end content -->
+	
+	<div class="sidebar-on-right">
+		<?php get_sidebar(); ?>
+	</div>
+	
+</div> <!-- end page-wrap -->
+	
+<?php get_footer(); ?>

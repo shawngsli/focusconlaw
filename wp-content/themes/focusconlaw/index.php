@@ -1,56 +1,112 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package focusconlaw
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<!-- Title Bar -->	
+<?php if ( $data['select_blogtitlebar'] == 'Background-Image Style 1' ) { ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="alt-title" class="post-thumbnail" style="background-image: url( <?php echo $data['media_blogtitlebar']; ?> );">
+		<div class="grid"></div>
+		<div class="container">
+			<h1><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></h1>
+			<?php if($data['text_blogsubtitle']){ echo '<h2>'.$data['text_blogsubtitle'].'</h2>'; } ?>
+		</div>
+	</div>
+	<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
+		<div id="alt-breadcrumbs">
+			<div class="container">
+				<?php minti_breadcrumbs(); ?>
+			</div>
+		</div>
+	<?php } ?>
+	<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
+	
+<?php } elseif ( $data['select_blogtitlebar'] == 'Background-Image Style 2' ) { ?>
 
-		<?php
-		if ( have_posts() ) :
+	<div id="alt-title-2" class="post-thumbnail" style="background-image: url( <?php echo $data['media_blogtitlebar']; ?> );">
+		<div class="container">
+			<div class="ten columns">
+				<h1><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></h1>
+			</div>
+			<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
+				<div id="breadcrumbs" class="six columns">
+					<?php  minti_breadcrumbs(); ?>
+				</div>
+			<?php } ?>
+		</div>
+	</div>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+<?php } elseif ($data['select_blogtitlebar'] == 'No Titlebar') { ?>
+		
+		<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
+		<div id="no-title">
+			<div class="container">
+				
+					<div id="breadcrumbs" class="sixteen columns <?php if(get_post_meta( get_option('page_for_posts'), 'minti_subtitle', true )){ echo 'breadrcumbpadding'; } /* to align middle */ ?>">
+						<?php  minti_breadcrumbs(); ?>
+					</div>
+				
+			</div>
+		</div>
+			<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
+		<?php } else { ?>
+			<div id="no-title-divider"></div>
+			<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
+		<?php } ?>
+	
+<?php } else { ?>
 
-			<?php
-			endif;
+	<div id="title">
+		<div class="container">
+			<div class="ten columns">
+				<h1><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></h1>
+				<?php if($data['text_blogsubtitle']){ echo '<h2>'.$data['text_blogsubtitle'].'</h2>'; } ?>
+			</div>
+				<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
+				<div id="breadcrumbs" class="six columns <?php if($data['text_blogsubtitle']){ echo 'breadrcumbpadding'; } /* to align middle */ ?>">
+					<?php minti_breadcrumbs(); ?>
+				</div>
+				<?php } ?>
+		</div>
+	</div>
+	
+	<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+<?php } ?>
+<!-- End: Title Bar -->
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+<?php 
+// Get Blog Layout from Theme Options
+if($data['select_bloglayout'] == 'Blog Medium') { 
+	$blogclass = 'blog-medium';
+	$blogtype = 'medium';
+} else {
+	$blogclass = 'blog-large';
+	$blogtype = 'large';
+}
+?>
 
-			endwhile;
+<div id="page-wrap" class="container">
+	
+	<div id="content" class="<?php echo $data['select_blogsidebar']; ?> twelve columns blog <?php echo $blogclass; ?>">
+	
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			
+			<?php get_template_part( 'framework/inc/post-format/content', get_post_format() ); ?>
+	
+		<?php endwhile; ?>
+		
+	
+		<?php get_template_part( 'framework/inc/nav' ); ?>
+	
+		<?php else : ?>
+	
+			<h2><?php _e('Not Found', 'minti') ?></h2>
+	
+		<?php endif; ?>
+	
+	</div>
 
-			the_posts_navigation();
+<?php get_sidebar(); ?>
 
-		else :
+</div>
 
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

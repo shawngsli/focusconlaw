@@ -1,85 +1,77 @@
-<?php
-/**
- * The template for displaying comments.
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package focusconlaw
- */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
-	return;
-}
-?>
-
-<div id="comments" class="comments-area">
-
+<div id="comments">
 	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'focusconlaw' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2>
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'focusconlaw' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'focusconlaw' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'focusconlaw' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'focusconlaw' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'focusconlaw' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'focusconlaw' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
+	
+		if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+			die ('Please do not load this page directly. Thanks!');
+	
+		if ( post_password_required() ) { ?>
+			<?php _e('This post is password protected. Enter the password to view comments.', 'minti'); ?>
 		<?php
-		endif; // Check for comment navigation.
+			return;
+		}
+	?>
+	
+	<?php if ( have_comments() ) : ?>
+		
+		
+		<h3 id="comments" class="title"><span><?php comments_number(__('Responses', 'minti'), __('Response (1)', 'minti'), __('Responses (%)', 'minti') );?></span></h3>
+	
+		<div class="navigation">
+			<div class="next-posts"><?php previous_comments_link() ?></div>
+			<div class="prev-posts"><?php next_comments_link() ?></div>
+		</div>
+	
+		<ol class="commentlist clearfix">
+			 <?php wp_list_comments(array( 'callback' => 'minti_comment' )); ?>
+		</ol>
+	
+		<div class="navigation">
+			<div class="next-posts"><?php previous_comments_link() ?></div>
+			<div class="prev-posts"><?php next_comments_link() ?></div>
+		</div>
+		
+	 <?php else : // this is displayed if there are no comments so far ?>
+	
+		<?php if ( comments_open() ) : ?>
+			<!-- If comments are open, but there are no comments. -->
+	
+		 <?php else : // comments are closed ?>
+			<p class="hidden"><?php _e('Comments are closed.', 'minti'); ?></p>
+	
+		<?php endif; ?>
+		
+	<?php endif; ?>
+		
+		
+<?php if ( comments_open() ) : ?>
 
-	endif; // Check for have_comments().
-
-
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'focusconlaw' ); ?></p>
 	<?php
-	endif;
+	
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
 
-	comment_form();
+		//Custom Fields
+		$fields =  array(
+			'author'=> '<div id="respond-inputs" class="clearfix"><p><input name="author" type="text" value="' . __('Name (required)', 'minti') . '" size="30"' . $aria_req . ' /></p>',
+			
+			'email' => '<p><input name="email" type="text" value="' . __('E-Mail (required)', 'minti') . '" size="30"' . $aria_req . ' /></p>',
+			
+			'url' 	=> '<p class="last"><input name="url" type="text" value="' . __('Website', 'minti') . '" size="30" /></p></div>',
+		);
+
+		//Comment Form Args
+        $comments_args = array(
+			'fields' => $fields,
+			'title_reply'=>'<h3 class="title"><span>'. __('Leave a reply', 'minti') .'</span></h3>',
+			'comment_field' => '<div id="respond-textarea"><p><textarea id="comment" name="comment" aria-required="true" cols="58" rows="10" tabindex="4"></textarea></p></div>',
+			'label_submit' => __('Submit comment','minti')
+		);
+		
+		// Show Comment Form
+		comment_form($comments_args); 
 	?>
 
-</div><!-- #comments -->
+
+<?php endif; // if you delete this the sky will fall on your head ?>
+
+</div>
