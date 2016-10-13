@@ -37,7 +37,7 @@ blockquote.right{margin-left:20px;text-align:left;margin-right:0;width:33%;float
 
 .container {
     position: relative;
-    width: 960px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
 }
@@ -537,7 +537,8 @@ div.wpcf7-validation-errors {
 /* ------------------------------------------------------------------------ */
 
 #boxed-layout {
-    width: 1000px;
+    width: 100%;
+    max-width: 1440px;
     margin: 0px auto;
     background: #ffffff;
     -webkit-box-shadow:0px 0px 16px 0px rgba(0, 0, 0, 0.16);
