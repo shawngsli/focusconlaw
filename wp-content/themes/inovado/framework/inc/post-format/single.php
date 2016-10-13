@@ -1,5 +1,6 @@
 <div class="post clearfix">
 
+        <!--
 	<?php if ( has_post_thumbnail() ) { ?>
 	<div class="post-image">
 		<a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" title="<?php the_title(); ?>" rel="bookmark">
@@ -7,7 +8,8 @@
 		</a>
 	</div>
 	<?php } ?>
-	
+        -->
+
 	<a href="#" class="post-icon standard"></a>
 	
 	<div class="post-content">
