@@ -13,9 +13,9 @@ if($data['select_bloglayout'] == 'Blog Medium') {
 }
 ?>
 
-<div id="page-wrap" class="container">
+<div id="page-wrap" class="row page-container">
 
-        <div id="content" class="<?php echo $data['select_blogsidebar']; ?> twelve columns blog <?php echo $blogclass; ?>">
+        <div id="content" class="col-lg-8 col-lg-push-4">
    
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

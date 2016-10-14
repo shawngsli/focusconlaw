@@ -409,36 +409,6 @@ global $data;
 ?>
 
 	<style>
-		
-		<?php if($data['select_layoutstyle'] == 'Boxed Layout' || $data['select_layoutstyle'] == 'Boxed Layout with margin' ) { ?>
-			body{
-			<?php // Specific Page Background defined? 
-			if( get_post_meta( get_the_ID(), 'minti_bgurl', true ) != '' ) {
-		
-				if(get_post_meta( get_the_ID(), 'minti_bgcolor', true )) { echo 'background-color: '.get_post_meta( get_the_ID(), 'minti_bgcolor', true ).';';}
-				if(get_post_meta( get_the_ID(), 'minti_bgurl', true )) { echo 'background-image: url('.get_post_meta( get_the_ID(), 'minti_bgurl', true ).');';}
-				if(get_post_meta( get_the_ID(), 'minti_bgstyle', true ) != 'stretch') { 
-					echo 'background-repeat: '.get_post_meta( get_the_ID(), 'minti_bgstyle', true ).';'; 
-				} else { 
-					echo '-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'; 
-				}
-				
-			} // EOF Specific BG
-			
-			// If No Specific Page Background take Defaults
-			else {
-				if($data['color_bg'] != "") { echo 'background-color: '. $data['color_bg'] .';'; }
-				if($data['media_bg'] != "") { echo 'background-image: url('.$data['media_bg'].');'; } 
-				if($data['select_bg'] != 'Stretch Image') { 
-					echo 'background-repeat: '.$data['select_bg'].';'; 
-				} else { 
-					echo '-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;'; 
-				}
-			} // EOF Default BG ?>
-			background-attachment: fixed;
-			}
-		<?php } ?>
-		
 		 <?php if($data['check_responsive'] == true) { ?>
 		@media only screen and (max-width: 767px) {
 			#topbar .callus{ background: <?php echo $data['color_topbarresponsive']; ?>; }	

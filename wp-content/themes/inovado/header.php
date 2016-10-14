@@ -30,7 +30,7 @@
 
 <?php if($data['media_favicon_ipad_retina'] != "") { ?><link rel="apple-touch-icon" sizes="144x144" href="<?php echo $data['media_favicon_ipad_retina']; ?>"><?php } ?>
 
-<link rel="stylesheet" type="text/css" id="bootstrap-css "href="wp-content/themes/inovado/framework/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" id="bootstrap-css "href="<?php home_url() ?>/wp-content/themes/inovado/framework/css/bootstrap.min.css">
 
 <!-- WordPress Stuff
 ========================================================= -->
@@ -73,11 +73,9 @@
                 
                         </div>
                 
-                        <div id="navigation" class="row clearfix alpha omega">
-                                <div class="nav-container">
-                                        <div class="col-lg-12">
-                                                <?php wp_nav_menu(array('theme_location' => 'main_navigation', 'menu_id' => 'nav')); ?>
-                                        </div>
+                        <div id="navigation" class="row clearfix">
+                                <div class="col-lg-12 nav-container">
+                                        <?php wp_nav_menu(array('theme_location' => 'main_navigation', 'menu_id' => 'nav')); ?>
                                 </div>
                         </div>
                 

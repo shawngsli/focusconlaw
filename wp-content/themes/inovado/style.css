@@ -35,20 +35,13 @@ blockquote.right{margin-left:20px;text-align:left;margin-right:0;width:33%;float
 /* 02. Skeleton Grid 960px / 16 Columns */
 /* ------------------------------------------------------------------------ */
 
-.container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
+.container .column,
+.container .columns {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
-    .container .column,
-    .container .columns {
-        float: left;
-        display: inline;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
 
 /* Nested Column Classes */
 .column.alpha,
@@ -62,7 +55,6 @@ blockquote.right{margin-left:20px;text-align:left;margin-right:0;width:33%;float
 .columns.last { margin-right: 0 }
 
 /* Base Grid */
-.container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
 .container .column,
 .container .columns                         { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
 /* .row                                        { margin-bottom: 20px; } */
@@ -696,32 +688,34 @@ div.wpcf7-validation-errors {
 /* ------------------------------------------------------------------------ */
 
 .header { 
-	background: #ffffff;
+    background: #ffffff;
 }
 
-    .header .logo {
-        font-size: 20px;
-        line-height: 20px;
-        font-weight: 600;
-        margin-bottom: 0 !important;
-    }
+.header .logo {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 0 !important;
+}
 
-        .header .logo img { 
-        	max-width: 100%;
-        	height: auto;
-        }
+.header .logo img { 
+    max-width: 100%;
+    height: auto;
+}
         
-        .header .logo .logo_standard{
-        }
+.header .logo .logo_standard{
+}
         
-        .header .logo .logo_retina{
-	        display: none;
-        }
+.header .logo .logo_retina{
+    display: none;
+}
    
-#header #navigation ul#nav > li > a {
-      font-size: 16px;
+.menu-primary-nevigation-container {
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
 }
-
 
 /* ------------------------------------------------------------------------ */
 /* 12. Header - Searchform */
@@ -1602,20 +1596,6 @@ div.wpcf7-validation-errors {
 
 .tp-bannershadow { opacity: 0.7 }
 
-/*.rev_slider {
-    display: block !important;
-    overflow: hidden !important;
-    -webkit-border-radius: 6px !important;
-       -moz-border-radius: 6px !important;
-       		border-radius: 6px !important;
-}
-
-.fullwidthbanner-container .rev_slider {
-    -webkit-border-radius: 0px !important;
-       -moz-border-radius: 0px !important;
-    		border-radius: 0px !important;
-}*/
-
 .tp-leftarrow.default {
 	background: rgba(20,20,20,0.5) url(framework/images/slider-prev.png) !important;
 	background-repeat: no-repeat !important;
@@ -2236,10 +2216,6 @@ h3.error-404 {
     max-width: 1440px;
 }
 
-.container {
-    width: 100%;
-}
-
 .container .columns {
     margin-left: 10%;
     margin-right: 10%;
@@ -2335,21 +2311,11 @@ h3.error-404 {
         width: 100%;
     }
 
-    #sidebar {
-        margin-right: 5%;
-    }
-
     .rpwe_widget.eight.columns img.rpwe-thumb {
         width: 175px;
         height: 90px;
     }
 }
-
-@media only screen and (min-width: 960px)  {
-        #rev_slider_5_1, #rev_slider_5_1_wrapper {
-	    width: 100% !important;
-        }  
-    }
 
 .post-meta {
     margin-top: 0px;
@@ -2616,8 +2582,34 @@ ol.custom:first-child {
 /* front-page blocks */
 /* ------------------------------------------------------------------------ */
 
+#frontpage-slider {
+    margin-bottom: 25px;
+}
+
 .frontpage.block h2 {
     text-align: center;
     border-bottom: 2px #999 solid;
 }
 
+.newPost-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.frontpage-thumbnail {
+}
+
+.frontpage-new-post h3 {
+    font-size: 1em;
+}
+
+.frontpage-new-post h3:hover {
+    color: #666666;
+}
+
+.frontpage-new-post time {
+    font-size: 15px;
+    color: #777;
+}

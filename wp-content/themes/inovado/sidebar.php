@@ -1,4 +1,4 @@
-<div id="sidebar" class="four columns">
+<div id="sidebar" class="col-lg-4 col-lg-pull-8">
 
     <?php 
 	if(is_page()){

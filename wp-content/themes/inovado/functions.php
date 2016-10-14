@@ -259,6 +259,7 @@
 		add_image_size( 'eight-columns', 460, 300, true ); 		// perfect for responsive - adjust height in CSS
 		add_image_size( 'eight-columns-thin', 460, 250, true ); // Portfolio 1 Col / perfect for responsive - adjust height in CSS
 		add_image_size( 'mini', 60, 60, true ); 				// used for widget thumbnail
+		add_image_size( 'front-page-thumbnail', 169, 87, true);
 	}
 	
 	/* ------------------------------------------------------------------------ */
