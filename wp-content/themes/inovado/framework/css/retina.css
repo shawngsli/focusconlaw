@@ -320,15 +320,6 @@
 	        background-size:40px 80px;
     }
 	
-	[class^="icon-"],
-	[class*=" icon-"] {
-	background-image: url(../images/glyphicons-halflings@2x.png);
-	-webkit-background-size:469px 159px;
-	   -moz-background-size:469px 159px;
-	     -o-background-size:469px 159px;
-	        background-size:469px 159px;
-	}
-	
 	a.button.black i,
 	a.button.alternative-1 i,
 	a.button.alternative-2 i,

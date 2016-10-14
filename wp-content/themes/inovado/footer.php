@@ -27,7 +27,7 @@
 	
 	<?php if($data['check_footerwidgets'] == true) { ?>
 	<footer id="footer">
-		<div class="container">
+		<div class="row footer-container">
 			<div class="clearfix">
 				<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Footer Widgets')); ?>		
 			</div>
