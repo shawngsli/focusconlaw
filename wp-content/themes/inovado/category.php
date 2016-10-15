@@ -15,7 +15,7 @@ if($data['select_bloglayout'] == 'Blog Medium') {
 
 <div id="page-wrap" class="row page-container">
 
-        <div id="content" class="col-lg-8 col-lg-push-4">
+        <div id="content" class="col-md-9 col-md-push-3">
    
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

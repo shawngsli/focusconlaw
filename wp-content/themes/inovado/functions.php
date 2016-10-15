@@ -43,6 +43,10 @@
 	require_once('admin/index.php'); // Slightly Modified Options Framework
 	
 	/* ------------------------------------------------------------------------ */
+	/* Include menu walker for bootstrap menu */
+        require_once('framework/inc/wp_bootstrap_navwalker.php');
+
+	/* ------------------------------------------------------------------------ */
 	/* Include Meta Box Script */
     define( 'RWMB_URL', trailingslashit( get_template_directory_uri() . '/framework/inc/meta-box' ) );
     define( 'RWMB_DIR', trailingslashit( get_template_directory() . '/framework/inc/meta-box' ) );

@@ -40,6 +40,8 @@
 
 <?php wp_head(); ?>
 
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
 
@@ -53,30 +55,49 @@
 	
                 <header id="header" class="header clearfix">
                 
-                        <div class="row header-container">
-                
-                                        <div class="col-lg-8 logo">
+                                        <div class="col-xs-9 logo">
                 
                 
 					        <a href="<?php echo home_url(); ?>/"><img src="<?php echo home_url(); ?>/wp-content/uploads/2015/10/focusconlaw_logo.png" alt="<?php bloginfo('name'); ?>" class="logo_standard" /></a>
 					       
                                                 <?php if($data['media_logo_retina'] != '') { ?><a href="<?php echo home_url(); ?>/"><img src="<?php echo $data['media_logo_retina'] ?>" width="<?php echo $data['logo_width']; ?>" height="<?php echo $data['logo_height']; ?>" alt="<?php bloginfo('name'); ?>" class="logo_retina" /></a><?php } ?>
 					</div>
-                                        <div class="col-lg-2 social-icons">
+                                        <div class="col-md-2 social-icons">
                                         </div>
-					<div class="col-lg-2 search-form">
+					<div class="col-md-2 search-form">
                                                 <form action="<?php echo home_url(); ?>/" id="header-searchform" method="get">
                                                         <input type="text" id="header-s" name="s" value="" autocomplete="off" />
                                                         <input type="submit" value="Search" id="header-searchsubmit" />
                                                 </form>
                                         </div> 
                 
-                        </div>
-                
-                        <div id="navigation" class="row clearfix">
-                                <div class="col-lg-12 nav-container">
-                                        <?php wp_nav_menu(array('theme_location' => 'main_navigation', 'menu_id' => 'nav')); ?>
+                        <!--<div id="navigation" class="clearfix">
+                                <div class="col-xs-3 col-md-12 nav-container">
+                                        <?php //wp_nav_menu(array('theme_location' => 'main_navigation', 'menu_id' => 'nav')); ?>
                                 </div>
-                        </div>
-                
+			</div>-->
+
+                        <nav id="nav-toggle-button" class="col-xs-3 navbar navbar-default row visible-xs-inline">
+                                        <div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                        <span class="sr-only">Toggle navigation</span>
+                                                        <span class="icon-bar"></span>
+                                                        <span class="icon-bar"></span>
+                                                        <span class="icon-bar"></span>
+                                                </button>
+					</div>
+                        </nav>
+                        <nav id="navigation" class="navbar navbar-default col-xs-12">
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                        <?php wp_nav_menu(array(
+					          'theme_location' => 'main_navigation',
+						  'menu_id' => 'nav',
+						  'depth' => 2,
+						  'container' => false,
+						  'menu_class' => 'nav navbar-nav',
+						  'fallback_cb' => 'wp_page_menu',
+						  'walker' => new wp_bootstrap_navwalker()
+					      )); ?>
+                                        </div>
+                        </nav>
                 </header>

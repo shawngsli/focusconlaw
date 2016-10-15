@@ -235,8 +235,6 @@ function my_styles_method() {
 
 			/* Header ------------------------------------------------------------------------ */  
 
-			#header .header-container{ height: {$style_hv2height}; }
-			#header .logo{ margin-top: {$style_hv2logotopmargin}; }
 			#header #header-searchform{ margin-top: {$style_hv2searchformtopmargin}; }
 			#header #header-cart{ margin-top: {$style_hv2searchformtopmargin}; }
 			#header .slogan{ margin-top: {$style_hv2slogantopmargin}; }

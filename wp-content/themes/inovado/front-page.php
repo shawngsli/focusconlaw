@@ -2,13 +2,13 @@
 
 <div id="page-wrap" class="row page-container">
 	
-	<div id="frontpage-slider" class="col-lg-12">
+	<div id="frontpage-slider" class="col-xs-12">
 
             <?php echo do_shortcode("[metaslider id=2624]"); ?>
 
 	</div>
 
-        <div id="frontpage-new-posts" class="col-lg-6 col-md-6 frontpage block">
+        <div id="frontpage-new-posts" class="col-sm-6 frontpage block">
                 <h2>最新文章</h2>
                
                 <?php
@@ -27,7 +27,7 @@
 	                    $newPosts->the_post(); ?>
 
 		    <div class="row newPost-item">
-		    <div class="col-lg-4 frontpage-thumbnail">
+		    <div class="col-xs-4 frontpage-thumbnail">
                     <a href="<?php the_permalink(); ?>">
                     <?php	
 		    	if( has_post_thumbnail() ) {
@@ -36,7 +36,7 @@
                     ?>
                     </a>
 		    </div>
-		    <div class="col-lg-8 frontpage-new-post">
+		    <div class="col-xs-8 frontpage-new-post">
 			<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         <time><?php echo get_the_date(); ?></time>
                     </div>
@@ -48,7 +48,7 @@
                     ?>
                 </div>
 	</div>
-	<div id="frontpage-videos" class="col-lg-6 col-md-6 frontpage block">
+	<div id="frontpage-videos" class="col-sm-6 frontpage block">
 		<h2>影音專區</h2>
         </div>
 

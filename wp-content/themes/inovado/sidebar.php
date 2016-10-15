@@ -1,5 +1,5 @@
-<div id="sidebar" class="col-lg-4 col-lg-pull-8">
-
+<div id="sidebar" class="col-md-3 col-md-pull-9">
+    <div class="sidebar-container">
     <?php 
 	if(is_page()){
 		/* Page Sidebar */
@@ -14,5 +14,5 @@
 		if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('Blog Widgets') );
 	}
 	?>
-
+    </div>
 </div>
