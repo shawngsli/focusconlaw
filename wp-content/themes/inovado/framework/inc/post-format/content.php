@@ -10,9 +10,9 @@
 ?>
 
 <div class="post clearfix">
-        <div class="post-head-wrapper clearfix">
+        <div class="row post-head-wrapper clearfix">
 	<?php if ( has_post_thumbnail() ) { ?>
-	<div class="post-image">
+	<div class="col-sm-4 post-image">
 		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__('Permalink to %s', 'minti'), the_title_attribute('echo=0') ); ?>" rel="bookmark">
 			<!--
                         <?php the_post_thumbnail($thumbnail_size); ?>
@@ -29,7 +29,7 @@
 		<!--
 	        <a href="#" class="post-icon standard"></a>
 	        -->
-	        <div class="post-title">
+	        <div class="col-sm-8 post-title">
 		        <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__('Permalink to %s', 'minti'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 		</div>
         </div>

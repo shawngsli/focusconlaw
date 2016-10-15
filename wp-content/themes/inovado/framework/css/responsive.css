@@ -37,14 +37,6 @@
 		#header-searchform{
 			display: none;
 		}
-
-		#header-v6.header-megamenu #navigation > ul > li.megamenu > ul.sub-menu{ 
-	        width: 748px;    
-	    }
-	
-		.post-content {
-		    width: 500px;
-		}
 		
 		.blog-medium .post-content {
 		    width: 216px;
@@ -348,11 +340,6 @@
 		}
 		
 		/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-		
-		.post-content {
-		    /*width: 365px;*/
-		    width: 420px; /* edit by GS 2016.04.25 */
-		}
 		
 		.post-meta span{
 			display: block;
