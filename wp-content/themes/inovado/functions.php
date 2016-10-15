@@ -65,11 +65,6 @@
             	'slug'      => 'contact-form-7',
             	'required'  => false,
             ),
-            array(
-            	'name'      => 'SMK Sidebar Generator',
-            	'slug'      => 'smk-sidebar-generator',
-            	'required'  => false,
-            ),
 		);
 	
 		// Change this to your theme text domain, used for internationalising strings
