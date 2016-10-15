@@ -235,9 +235,6 @@ function my_styles_method() {
 
 			/* Header ------------------------------------------------------------------------ */  
 
-			#header #header-searchform{ margin-top: {$style_hv2searchformtopmargin}; }
-			#header #header-cart{ margin-top: {$style_hv2searchformtopmargin}; }
-			#header .slogan{ margin-top: {$style_hv2slogantopmargin}; }
 			#header #navigation .sub-menu{ top: {$style_hv2submenumargin}; }
 /*
 			#header #navigation ul#nav > li > a { font-family: {$font_nav_face}, Arial, Helvetica, sans-serif; font-size: {$font_nav_size}; font-weight: {$font_nav_style}; color: {$font_nav_color}; }

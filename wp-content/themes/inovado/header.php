@@ -62,9 +62,9 @@
 					       
                                                 <?php if($data['media_logo_retina'] != '') { ?><a href="<?php echo home_url(); ?>/"><img src="<?php echo $data['media_logo_retina'] ?>" width="<?php echo $data['logo_width']; ?>" height="<?php echo $data['logo_height']; ?>" alt="<?php bloginfo('name'); ?>" class="logo_retina" /></a><?php } ?>
 					</div>
-                                        <div class="col-md-2 social-icons">
+                                        <div class="col-xs-1 social-icons">
                                         </div>
-					<div class="col-md-2 search-form">
+					<div class="col-xs-2 search-form">
                                                 <form action="<?php echo home_url(); ?>/" id="header-searchform" method="get">
                                                         <input type="text" id="header-s" name="s" value="" autocomplete="off" />
                                                         <input type="submit" value="Search" id="header-searchsubmit" />
