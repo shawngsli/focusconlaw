@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php if($data['check_stripedborder']) { ?><div class="hr-border"><div><?php } ?>
-
 <?php
 // Get Blog Layout from Theme Options
 if($data['select_bloglayout'] == 'Blog Medium') {

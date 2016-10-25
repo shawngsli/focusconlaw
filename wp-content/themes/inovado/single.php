@@ -1,81 +1,8 @@
 <?php get_header(); ?>
 
-<!-- Title Bar -->	
-<?php if ( $data['select_blogtitlebar'] == 'Background-Image Style 1' ) { ?>
-
-	<div id="alt-title" class="post-thumbnail" style="background-image: url( <?php echo $data['media_blogtitlebar']; ?> );">
-		<div class="grid"></div>
-		<div class="container">
-			<div class="blog-h1"><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></div>
-			<?php if($data['text_blogsubtitle']){ echo '<div class="blog-h2">'.$data['text_blogsubtitle'].'</div>'; } ?>
-		</div>
-	</div>
-	<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
-		<div id="alt-breadcrumbs">
-			<div class="container">
-				<?php minti_breadcrumbs(); ?>
-			</div>
-		</div>
-	<?php } ?>
-	<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
-
-<?php } elseif ( $data['select_blogtitlebar'] == 'Background-Image Style 2' ) { ?>
-
-	<div id="alt-title-2" class="post-thumbnail" style="background-image: url( <?php echo $data['media_blogtitlebar']; ?> );">
-		<div class="container">
-			<div class="ten columns">
-				<div class="blog-h1"><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></div>
-			</div>
-			<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
-				<div id="breadcrumbs" class="six columns">
-					<?php  minti_breadcrumbs(); ?>
-				</div>
-			<?php } ?>
-		</div>
-	</div>
-
-<?php } elseif ($data['select_blogtitlebar'] == 'No Titlebar') { ?>
-		
-		<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
-		<div id="no-title">
-			<div class="container">
-				
-					<div id="breadcrumbs" class="sixteen columns <?php if(get_post_meta( get_option('page_for_posts'), 'minti_subtitle', true )){ echo 'breadrcumbpadding'; } /* to align middle */ ?>">
-						<?php  minti_breadcrumbs(); ?>
-					</div>
-				
-			</div>
-		</div>
-			<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
-		<?php } else { ?>
-			<div id="no-title-divider"></div>
-			<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
-		<?php } ?>
+<div id="page-wrap" class="row page-container">
 	
-<?php } else { ?>
-
-	<div id="title">
-		<div class="container">
-			<div class="ten columns">
-				<div class="blog-h1"><?php echo $data['text_blogtitle']; ?><?php if($data['text_titledivider'] != "") { echo $data['text_titledivider']; } ?></div>
-				<?php if($data['text_blogsubtitle']){ echo '<div class="blog-h2">'.$data['text_blogsubtitle'].'</div>'; } ?>
-			</div>
-				<?php if($data['check_blogbreadcrumbs'] == 0){ ?>
-				<div id="breadcrumbs" class="six columns <?php if($data['text_blogsubtitle']){ echo 'breadrcumbpadding'; } /* to align middle */ ?>">
-					<?php minti_breadcrumbs(); ?>
-				</div>
-				<?php } ?>
-		</div>
-	</div>
-	
-	<?php if($data['check_stripedborder']) { ?><div class="hr-border"></div><?php } ?>
-
-<?php } ?>
-<!-- End: Title Bar -->
-
-<div id="page-wrap" class="container">
-	
-	<div id="content" class="<?php echo $data['select_blogsidebar']; ?> twelve columns single">
+	<div id="content" class="col-md-9 col-md-push-3">
 	
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
