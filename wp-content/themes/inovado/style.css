@@ -2566,25 +2566,42 @@ ol.custom:first-child {
     border-bottom: 2px #999 solid;
 }
 
-.newPost-item {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.newPost-item, .qa-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eeeeee;
 }
 
-.frontpage-thumbnail {
+.frontpage-video {
+    margin-top: 15px;
 }
 
-.frontpage-new-post h3 {
+
+.frontpage-new-post h3, .frontpage-qa h3, .frontpage-video h3 {
     font-size: 1em;
+    margin-bottom: 0px;
 }
 
-.frontpage-new-post h3:hover {
+.frontpage-new-post h3:hover, .frontpage-qa h3:hover, .frontpage-video h3:hover {
     color: #666666;
 }
 
-.frontpage-new-post time {
+.frontpage-new-post time, .frontpage-qa time, .frontpage-video time {
     font-size: 15px;
     color: #777;
 }
+
+.youtube-video-container {
+	    position: relative;
+	        width: 100%;
+		    height: 0;
+		        padding-bottom: 56.25%;
+		}
+		.youtube-video {
+			    position: absolute;
+			        top: 0;
+				    left: 0;
+				        width: 100%;
+					    height: 100%;
+				    }
