@@ -378,16 +378,6 @@ function my_styles_method() {
 			.tp-rightarrow.default:hover { background-color: {$color_accent} !important; }
 			.wooslider-direction-nav a:hover { background-color: {$color_accent}; }
 
-			/* WooCommerce */
-
-			.product .onsale{ background: {$color_accent}; }
-			.woocommerce button, .woocommerce input[type=submit]{ color: {$color_accent}; }
-			.products li .price{ color: {$color_accent}; }
-			.product .price{ color: {$color_accent}; }
-			.woocommerce-tabs .panel h2{ color: {$color_accent}; }
-			.checkout .shop_table .total{ color: {$color_accent}; }
-			.woocommerce .form-row input[type=submit], 
-			.woocommerce .form-row button{ color: {$color_accent}; }
 
         ";
 
