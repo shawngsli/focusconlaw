@@ -892,10 +892,6 @@ div.wpcf7-validation-errors {
 .post-icon.video 		{ background-image: url(framework/images/postformat-video.png) }
 .post-icon.audio 		{ background-image: url(framework/images/postformat-audio.png) }
 
-.post-content {
-    float: left;
-}
-
 .blog .post-title {
     margin: 0 !important;
     padding: 0 !important;

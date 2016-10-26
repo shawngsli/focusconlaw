@@ -346,10 +346,6 @@
 			margin:0 0 5px 0;
 		}
 		
-		.blog-medium .post-content {
-		    width: 420px;
-		}
-		
 		.blog-medium .post-video,
 		.blog-medium .post-gallery,
 		.blog-medium .post-image,
@@ -567,18 +563,9 @@
 		
 		/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 		
-		.post-content {
-		    /*width: 245px;*/
-		    width: 300px; /* edit by GS 2016.04.25 */
-		}
-		
 		.post-meta span{
 			display: block;
 			margin:0 0 5px 0;
-		}
-		
-		.blog-medium .post-content {
-		    width: 300px;
 		}
 		
 		.blog-medium .post-video,
