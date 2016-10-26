@@ -9,8 +9,6 @@
 	</div>
 	<?php } ?>
         -->
-
-	<a href="#" class="post-icon standard"></a>
 	
 	<div class="post-content">
 		<div class="post-title">
