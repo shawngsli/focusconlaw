@@ -11,6 +11,7 @@
 /wp-config.php
 *.sql
 /lawstool
+/conFiles
 
 #Hidden files
 *.DS_Store
