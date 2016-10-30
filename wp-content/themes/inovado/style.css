@@ -987,6 +987,19 @@ div.wpcf7-validation-errors {
 
 /* Different Post Types ---------------------------------------------------- */
 
+.con-reason {
+    counter-reset: reason-counter;
+}
+
+.con-reason p:before {
+    content: counter(reason-counter);
+    counter-increment: reason-counter;
+    margin-left: -17px;
+    margin-right: 7px;
+}
+
+
+
 .post-image,
 .post-gallery,
 .post-video,
