@@ -12,6 +12,7 @@
 *.sql
 /lawstool
 /conFiles
+conFiles*
 
 #Hidden files
 *.DS_Store
