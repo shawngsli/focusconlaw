@@ -30,7 +30,7 @@
 
 <?php if($data['media_favicon_ipad_retina'] != "") { ?><link rel="apple-touch-icon" sizes="144x144" href="<?php echo $data['media_favicon_ipad_retina']; ?>"><?php } ?>
 
-<link rel="stylesheet" type="text/css" id="bootstrap-css "href="<?php home_url() ?>/wp-content/themes/inovado/framework/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" id="bootstrap-css "href="<?php home_url(); ?>/wp-content/themes/inovado/framework/css/bootstrap.min.css">
 
 <!-- WordPress Stuff
 ========================================================= -->
@@ -40,8 +40,7 @@
 
 <?php wp_head(); ?>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="<?php home_url(); ?>/wp-content/themes/inovado/framework/js/bootstrap.min.js"></script>
 
 </head>
 

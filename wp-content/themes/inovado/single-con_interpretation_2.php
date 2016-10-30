@@ -2,7 +2,7 @@
 
 <div id="page-wrap" class="row page-container">
 	
-	<div id="content" class="col-md-9 col-md-push-3">
+	<div id="content" class="col-md-10 col-md-push-2">
 	
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			

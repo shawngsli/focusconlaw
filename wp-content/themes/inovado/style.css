@@ -209,9 +209,7 @@ ul { list-style: square outside }
     ol li ul,
     ol li ol { margin-bottom: 0 }
     
-/* ------------------------------------------------------------------------ */
-/* Tables 
-/* ------------------------------------------------------------------------ */
+/* Tables ---------------------------------------------------- */
 th {
     font-weight: bold;
 }
@@ -434,9 +432,6 @@ div.wpcf7-validation-errors {
 
 }
 
-    #boxed-layout .container {
-        
-    }
 
 #background {
     position: fixed;
@@ -672,8 +667,6 @@ div.wpcf7-validation-errors {
 .nopadding{
     padding:0;
 }
-
-#content.sidebar-left { float: right }
 
 /* Striped Border under Title and above Footer */
 .hr-border { 
@@ -1576,25 +1569,37 @@ h3.error-404 {
 /* 23. Sidebars */
 /* ------------------------------------------------------------------------ */
 
-#sidebar { }
+#sidebar .con-interpretation.sidebar-container {
+    background-color: #fff;
+    padding-top: 20px;
+ }
+
+#sidebar .con-interpretation .panel-heading a {
+    color: rgb(68, 68, 68);
+}
+
+#sidebar .con-interpretation .panel-body a {
+    font-size: 16px;
+}
+
 
 #sidebar .widget {
     margin-bottom: 40px;
     color: #888888;
 }
 
-        #sidebar .widget h3 {
-            font-size: 15px;
-            margin:0 0 20px 0;
-        }
+#sidebar .widget h3 {
+    font-size: 15px;
+    margin:0 0 20px 0;
+}
 
-        #sidebar .widget ul li {
-            background: url(framework/images/arrow4.png) no-repeat 0px 9px;
-            padding: 1px 0 1px 12px;
-        }
+#sidebar .widget ul li {
+    background: url(framework/images/arrow4.png) no-repeat 0px 9px;
+    padding: 1px 0 1px 12px;
+}
 
-        #sidebar .widget ul li.current_page_item,
-        #sidebar .widget ul li.current-menu-item { font-weight: bold }
+#sidebar .widget ul li.current_page_item,
+#sidebar .widget ul li.current-menu-item { font-weight: bold }
 
 /* Side Navigation Template ---------------------------------------------------- */
 
