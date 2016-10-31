@@ -5,7 +5,7 @@
 	
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	                <div id="content" class="col-md-9 col-md-push-3">
+	                <div id="content" class="col-md-10 col-md-push-2">
 			
                         <?php get_template_part( 'framework/inc/post-format/single', get_post_format() ); ?>
 			
@@ -69,7 +69,7 @@
 	
 	</div>
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('con-interpretation'); ?>
 
 </div>
 

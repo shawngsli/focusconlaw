@@ -2424,24 +2424,6 @@ h6 {
     text-decoration: underline;
 }
 
-.single-con_interpretation ol {
-    list-style-position: inside;
-    margin-left: 0;
-}
-
-.single-con_interpretation li {
-    margin-bottom: 20px;
-}
-
-.single-con_interpretation li p {
-    display: inline;
-    margin-left: 2.5em;
-}
-
-/*#page-wrap {
-    width: 100%;
-}*/
-
 img {
     max-width: 100%;
 }

@@ -381,6 +381,18 @@
             return $html;
 	}
 
+	function wpse_category_single_template($single_template) {
+            global $post;
+	    $cats = get_the_category();
+	    if ($cats[0]->slug == "con_court") {
+	    	if (file_exists(get_template_directory() . "/single-con_court.php")) {
+                   return get_template_directory() . "/single-con_court.php";
+	    	}
+	    }
+            return $single_template;
+	}
+	add_filter('single_template', 'wpse_category_single_template');
+
 /* ------------------------------------------------------------------------ */
 /* EOF
 /* ------------------------------------------------------------------------ */

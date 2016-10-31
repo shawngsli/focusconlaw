@@ -1,12 +1,12 @@
 <div id="sidebar" class="col-md-2 col-md-pull-10">
     <div class="con-interpretation sidebar-container">
     <?php 
-        $conCount = wp_count_posts('con_interpretation_2')->publish;
+        $conCount = wp_count_posts('con_interpretation')->publish;
 	$modulus = $conCount % 50;
 	$remaining = $conCount - $modulus;
 	$linkContent = "";
         for ($i = $conCount; $i > $remaining; $i--) {
-	    $linkContent .= '<a href="' . site_url() . '/' . get_post_type($post->ID) . '/' . $i . '">釋字第 ' . $i . ' 號解釋</a><br>';
+	    $linkContent .= '<a href="' . site_url() . '/con_interpretation/' . $i . '">釋字第 ' . $i . ' 號解釋</a><br>';
 	}
 	$panelTitle = ($remaining + 1);
 	$rounds = $remaining / 50;
@@ -30,7 +30,7 @@
 	    $start = $i;
 	    $end = $start - 50 + 1;
 	    for (; $i >= $end; $i--) {
-	        $linkContent .= '<a href="' . site_url() . '/' . get_post_type($post->ID) . '/' . $i . '">釋字第' . $i . '號解釋</a><br>';
+	        $linkContent .= '<a href="' . site_url() . '/con_interpretation/' . $i . '">釋字第' . $i . '號解釋</a><br>';
 	    }
 	    $panelTitle = $end . "-" . "$start"; ?>
 
