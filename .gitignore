@@ -13,6 +13,7 @@
 /lawstool
 /conFiles
 conFiles*
+/conPages
 
 #Hidden files
 *.DS_Store
